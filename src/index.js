@@ -37,6 +37,9 @@ export default class LightRoomComponent extends Component {
        lightroomactive: true
      });
      this.getcontent(e.target.getAttribute("data-index"));
+     if (this.props.settings && this.props.settings.onOpen) {
+       this.props.settings.onOpen()
+     }
    };
 
    closelightroom = () => {
@@ -44,6 +47,9 @@ export default class LightRoomComponent extends Component {
        lightroomactive: false,
        thumbmenuactive: false
      });
+     if (this.props.settings && this.props.settings.onClose) {
+       this.props.settings.onClose()
+     }
    };
 
    //lightbox controls
