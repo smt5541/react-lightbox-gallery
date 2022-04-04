@@ -57,19 +57,13 @@ export default class LightRoomComponent extends Component {
    moveright = () => {
      var id = parseInt(this.state.activeindex, 10);
      if (id == this.state.length - 1)
-       this.setState({
-         lightroomactive: false,
-         thumbmenuactive: false
-       });
+       closelightroom();
      else this.getcontent(++id);
    };
    moveleft = () => {
      var id = parseInt(this.state.activeindex, 10);
      if (id == 0)
-       this.setState({
-         lightroomactive: false,
-         thumbmenuactive: false
-       });
+       closelightroom();
      else this.getcontent(--id);
    };
 
